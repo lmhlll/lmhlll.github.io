@@ -8,9 +8,6 @@ title = "My New Hugo Site"
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
-[params]
-  # LoveIt theme version
-  version = "0.2.X"
 
 [menu]
   [[menu.main]]
@@ -41,12 +38,6 @@ theme = "LoveIt"
     title = ""
     weight = 3
 
-# Markup related configuration in Hugo
-[markup]
-  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
-  [markup.highlight]
-    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
-    noClasses = false
 [params]
   #  LoveIt theme version
   version = "0.2.X"
@@ -64,7 +55,7 @@ theme = "LoveIt"
   #  date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
-  images = ["./static/lmh.jpg"]
+  images = ["/logo.png"]
 
   #  App icon config
   [params.app]
