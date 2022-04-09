@@ -1,21 +1,15 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
-name = "Kagome"
-license = "MIT"
-licenselink = "https://github.com/miiiku/hugo-theme-kagome/blob/main/LICENSE"
-description = "一个卡片风格的Hugo主题"
-homepage = "https://github.com/miiiku/hugo-theme-kagome"
-tags = ['card', 'responsive', 'mobile', 'Neumorphism', 'blog']
-features = ['posts', 'flex', 'card', 'Neumorphism', 'Soft UI', 'widgets']
-min_version = "0.83.1"
-
+[menu]
+  [[menu.social]]
+    # 唯一标识符
+    identifier = "github"
+    # 名称
+    name = "github"
+    # url地址
+    url = "https://github.com/lmhlll"
+    # 权重 越小越靠前
+    weight = 1
 [author]
-  name = "miiiku"
-  homepage = "https://github.com/miiiku"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "Liminghui"
+  email = "894194906@qq.com"
+  description = "李铭慧"
+  avatar = "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
