@@ -1,713 +1,362 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-Y4TMBBH2RZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="robots" content="index, follow" />
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="Minghui Li, 李铭慧, Computer Vision, Image Processing, Deep Learning, Localization, UAV autolanding, Sun Yat-sen University">
+<link rel="stylesheet" href="./Files/jemdoc.css" type="text/css" />
+<script src="jquery.min.js"></script>
+<link rel="shortcut icon" href="./Files/favicon-sysu.ico">
+<title>Minghui Li</title>
 
-      gtag("config", "G-Y4TMBBH2RZ");
-    </script>
+<style>
+    .link-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .link-group img {
+        width: 40px; /* 调整图标的宽度以适应两行文字的高度 */
+        height: 40px; /* 调整图标的高度以适应两行文字的高度 */
+        margin-right: 10px; /* 图标和文字之间的间距 */
+    }
+    .link-group .links {
+        display: flex;
+        flex-direction: column;
+    }
+    .link-group .links a {
+        text-decoration: none;
+        color: #000; /* 文字颜色 */
+    }
+</style>
 
-    <!-- <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9102894433178942"
-      crossorigin="anonymous"
-    ></script> -->
-    <meta name="propeller" content="96019d0abca680743d18c82104dc17e7" />
-    <script>
-      (function (s, u, z, p) {
-        (s.src = u), s.setAttribute("data-zone", z), p.appendChild(s);
-      })(
-        document.createElement("script"),
-        "ttps://iclickcdn.com/tag.min.js",
-        4919846,
-        document.body || document.documentElement
-      );
-    </script>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Minghui Li</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="icon" href="assets/icon.png" />
-  </head>
 
-  <body>
-    <!-- idea: have a javascript animated loss function converging in the header? :p -->
-    <div id="dhead" class="container">
-      <div class="row">
-        <div id="dpic">
-          <img src="assets/lmh.jpg" class="ppic" />
-        </div>
-        <div id="ddesc">
-          <h1>Minghui Li</h1>
-          <h2>Computer Vision research Phd🧠🤖</h2>
-          <div id="dico">
-            <a href="https://github.com/lmhlll">Google Scholar</a>
-            /
-            <a href="https://github.com/lmhlll">Blog</a>
-            /
-            <a href="https://github.com/lmhlll"
-              >GitHub</a
-            >
+<style>
+    .education-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .education-item {
+        display: flex;
+        align-items: flex-start; /* 确保图标和文字顶部对齐 */
+        margin-bottom: 10px;
+    }
+    .education-item img {
+        width: 40px; /* 调整图标的宽度 */
+        height: 40px; /* 调整图标的高度 */
+        margin-right: 10px; /* 图标和文字之间的间距 */
+    }
+    .education-item .content {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
 
-            /
-            <a href="https://www.zhihu.com/people/bigdevillmh">知乎</a>
-            <br />
-            <a href="https://github.com/lmhlll">WeChat</a> /
-            <a href="https://github.com/lmhlll"
-              >Google Scholar</a
-            ><br />
-            E-Mail: limh68@mail2.sysu.edu.cn
-          </div>
-          <div id="demail"></div>
-          <!-- will reveal email -->
-        </div>
-      </div>
+</head>
+ 
+ 
+<body>
+
+<a id="home" class="anchor"></a>
+<div id="container"> 
+<div class="container"> 
+
+<table class="imgtable"><tr><td>
+<a href="./"><img src="./Files/lmh_photo_square.jpg" alt="" height="215px" /></a>&nbsp;</td>
+<td align="left"><p><a href="./"><font size="4">Minghui Li (</font><font size="4"; font style="font-family:Microsoft YaHei">李铭慧</font><font size="4">)</font></a><br />
+<i> PhD Candidate </i>
+<br /><br />
+<div class="link-group">
+    <img src="./Files/hit.png" alt="Harbin Institute of Technology Logo">
+    <div class="links">
+        <a href="https://vilab.hit.edu.cn/index.html" target="_blank">Visual Intelligence (VI)Lab, Harbin 150006, China</a>
+        <a href="http://www.hit.edu.cn" target="_blank">Harbin Institute of Technology</a>
     </div>
-
-    <hr />
-
-    <div id="history" class="container">
-      <div class="entry row">
-        <div class="timespan">2021</div>
-        <div class="ico">
-          <div class="entry-dot"></div>
-          <img src="assets_files/hit.png" />
-        </div>
-        <div class="desc">
-          <div class="htxt">
-            I'm a research PhD at HIT, where I launched key AI
-            features:
-            <ul style="margin-top: 0px">
-              <li>
-                <a
-                  href="https://www.bilibili.com/video/BV1L4411V7Cm?spm_id_from=333.999.0.0"
-                >
-                  video summarization with multimodal learning</a
-                >
-              </li>
-              <li>
-                web based video super resolution and virtual background
-                customized WebGL deep learning library
-              </li>
-              <li>
-                scalable
-                <a href="https://youtu.be/TL3QpAlbvVQ?t=63">
-                  real time emotion, gaze, pose</a
-                >
-                on kubernetes
-              </li>
-            </ul>
-          </div>
-          <div class="hassets" style="height: 304px; margin: 20px 0 10px 0">
-            <!--div class="hasset" style="top: 0; left: 0; width: 68%">
-              <iframe
-                width="100%"
-                height="304px"
-                src="https://player.bilibili.com/player.html?bvid=BV17x411w7KC"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div-->
-            <div class="hasset" style="top: 0; left: 0; width: 68%">
-              <video
-                controls="0"
-                autoplay
-                preload="metadata"
-                muted=""
-                loop=""
-                playsinline=""
-                class="video"
-                width="100%"
-              >
-                <!--to hide completely style="pointer-events: none;" -->
-                <source src="assets_files/boshi1.mov" />
-              </video>
-            </div>
-            <!-- <div class="hasset" style="top: 0; left: 70%; width: 30%">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/0gGU0KJhT-Y?controls=0&autoplay=1&mute=1&loop=1&playlist=0gGU0KJhT-Y"
-                title="YouTube video player" 
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div> -->
-
-            <div class="hasset" style="top: 60%; left: 70%; width: 25%">
-              <video
-                controls="0"
-                autoplay
-                preload="metadata"
-                muted=""
-                loop=""
-                playsinline=""
-                class="video"
-                width="100%"
-              >
-                <!--to hide completely style="pointer-events: none;" -->
-                <source src="assets_files/5point1.mp4" />
-              </video>
-            </div>
-
-            <div class="hasset" style="top: 0; left: 70%; width: 25%">
-              <video
-                controls="0"
-                autoplay
-                preload="metadata"
-                muted=""
-                loop=""
-                playsinline=""
-                class="video"
-                width="100%"
-              >
-                <!--to hide completely style="pointer-events: none;" -->
-                <source src="assets_files/5point2.mp4" />
-              </video>
-            </div>
-
-            <!-- <div class="hasset" style="top: 0; left: 76%">
-              <a
-                href="https://www.youtube.com/watch?v=Ucp0TTmvqOE&feature=youtu.be&t=6678"
-                ><img src="assets/auto_2.38.42.png" width="185"
-              /></a>
-            </div>
-            <div class="hasset" style="top: 44.5%; left: 50.5%; width: 25%">
-              <a
-                href="https://slideslive.com/38917690/multitask-learning-in-the-wilderness"
-                ><img src="assets/multitask.png" width="100%"
-              /></a>
-            </div> -->
-            <!-- <div class="hasset" style="top: 67.5%; left: 76%">
-              <a href="https://www.youtube.com/watch?v=oBklltKXtDE"
-                ><img src="assets/software20_narrow.png" width="185"
-              /></a>
-            </div> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="entry row">
-        <div class="timespan">2018 - 2021</div>
-        <div class="ico">
-          <div class="entry-dot"></div>
-          <img
-            src="assets_files/sysu.png"
-          />
-        </div>
-        <div class="desc">
-          MS in computer vision at SYSU.
-          <ul style="margin-top: 0px">
-            <li>
-              My capstone project is on
-              <a href="https://yihui-he.github.io/epipolar-transformers/"
-                >multi-view pose estimation</a
-              >, with prof.
-              <a href="https://www.cs.cmu.edu/~katef/">Katerina Fragkiadaki</a>.
-            </li>
-            <li>
-              I authored
-              <a href="https://yihui-he.github.io/KL-Loss/"
-                >object detection with uncertainty</a
-              >, when I was a RA with prof.
-              <a href="http://www.cmu-biometrics.org/">Marios Savvides</a>.
-            </li>
-            <li>
-              I interned at Facebook AI Research mentored by
-              <a href="https://research.fb.com/people/goyal-priya/"
-                >Priya Goyal</a
-              >
-              and
-              <a href="http://www.cs.cmu.edu/~abhinavg/">Abhinav Gupta</a>.
-            </li>
-          </ul>
-
-          <div class="hassets" style="height: 300px";margin: 20px 0 10px 0> 
-            <!--div class="hasset" style="top: 0; left: 0; width: 50%">
-              <iframe
-                width="100%"
-                height="250px"
-                src="assets_files/18215113-李铭慧-Presentation-【录了很多遍都有电流声，老师见谅】.mp4"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div-->
-            <div class="hasset" style="top: 0; left: 0; width: 50%">
-              <video
-                controls="0"
-                autoplay
-                preload="metadata"
-                muted=""
-                loop=""
-                playsinline=""
-                class="video"
-                width="100%"
-              >
-                <!--to hide completely style="pointer-events: none;" -->
-                <source src="assets_files/shoushi.mov" />
-              </video>
-            </div>
-
-            <div class="hasset" style="top: 0; left: 50%; width: 50%">
-              <video
-                controls="0"
-                autoplay
-                preload="metadata"
-                muted=""
-                loop=""
-                playsinline=""
-                class="video"
-                width="100%"
-              >
-                <!--to hide completely style="pointer-events: none;" -->
-                <source src="assets_files/shuoshi222.mov" />
-              </video>
-            </div>
-
-            <!--div class="hasset" style="top: 0; left: 50%; width: 50%">
-              <iframe
-                width="100%"
-                height="300px"
-                src="assets_files/shoushi.mov"
-                title="Bilibili video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div-->
-            <!-- <div class="hasset" style="top: 0; left: 76%">
-              <a
-                href="https://www.youtube.com/watch?v=Ucp0TTmvqOE&feature=youtu.be&t=6678"
-                ><img src="assets/auto_2.38.42.png" width="185"
-              /></a>
-            </div>
-            <div class="hasset" style="top: 44.5%; left: 50.5%; width: 25%">
-              <a
-                href="https://slideslive.com/38917690/multitask-learning-in-the-wilderness"
-                ><img src="assets/multitask.png" width="100%"
-              /></a>
-            </div> -->
-            <!-- <div class="hasset" style="top: 67.5%; left: 76%">
-              <a href="https://www.youtube.com/watch?v=oBklltKXtDE"
-                ><img src="assets/software20_narrow.png" width="185"
-              /></a>
-            </div> -->
-          </div>
-        </div>
-      </div>
-
-      <div class="entry row">
-        <div class="timespan">2014 - 2018</div>
-        <div class="ico">
-          <div class="entry-dot"></div>
-          <img
-            src="assets_files/cauc.png"
-          />
-        </div>
-        <div class="desc">
-          Majored in computer science at Civil Avaition University of China. During my
-          undergrad study, I had a track record of contributing to CNN efficient
-          inference.
-          <ul style="margin-top: 0px">
-            <li>
-              I designed
-              <a href="https://yihui-he.github.io/channel-pruning/"
-                >channel pruning</a
-              >
-              to effectively prune channels. <b>(2k citations)</b>
-            </li>
-            <li>
-              I further proposed
-              <a href="https://arxiv.org/abs/1802.03494"
-                >AutoML for Model Compression</a
-              >
-              to sample the design space of channel pruning via reinforcement
-              learning, which greatly improved the performance.
-              <b>(1k citations)</b>
-            </li>
-            <li>
-              I served as a reviewer for ECCV'20, ICML'20, CVPR'20, ICLR'20,
-              ICCV'19, ICLR'19, NIPS'18, Pattern Recognition Letters,
-              TIP and IJCV.
-            </li>
-          </ul>
-          <div class="hassets" style="margin: 0px 0 0px 0">
-            <img src="assets_files/benke1.png" width="80%" />
-          </div>
-        </div>
-      </div>
+</div>
+<div class="link-group">
+    <img src="./Files/sysu.png" alt="Sun Yat-sen University Logo">
+    <div class="links">
+        <a href="http://saa.sysu.edu.cn/" target="_blank">Machine Intelligence and Collective RObotics (MICRO) Lab, Guangzhou 510275, China</a>
+        <a href="http://www.sysu.edu.cn/cn/index.htm" target="_blank">Sun Yat-sen University</a>
     </div>
+</div>
+<br />
+Location: Building Shensi-Room 415, Road #132, Panyu District, Guangzhou, Guangdong, China<br />
+<class="staffshortcut">
+ <A HREF="#News">News</A> | 
+ <A HREF="#Interest">Research Interest</A> | 
+ <A HREF="#Education">Education</A> | 
+ <A HREF="#Publications">Publications</A> | 
+ <A HREF="#Projects">Projects</A> | 
+ <A HREF="#Services">Services</A> | 
+ <A HREF="#Awards">Awards</A>
+<br />
+<br />
+ 
+Email: 894194906@qq.com (prior); &nbsp;&nbsp;&nbsp;&nbsp; limh68@mail2.sysu.edu.cn <br />
+[<a href="https://github.com/lmhlll" target="_blank">Google Scholar</a>]
+[<a href="https://github.com/lmhlll" target="_blank">GitHub</a>]
+[<a href="https://github.com/lmhlll" target="_blank">ResearchGate</a>]
+[<a href="https://github.com/lmhlll" target="_blank">ORCID</a>] 
+[<a href="./Files/weixin.png" target="_blank">WeChat</a>]
+</td></tr></table>
 
-    <!-- <div style="background-color: #eee; padding-top: 1px; margin-top: 10px">
-      <div id="featured-talks" class="container">
-        <div class="ctitle">featured talks</div>
-        <div class="row">
-          <div class="card">
-            <a href="https://www.therobotbrains.ai/who-is-andrej-karpathy">
-              <div class="ccimg"><img src="assets/robotbrains.jpg" /></div>
-            </a>
-            <div class="cdesc">Robot Brains podcast with Pieter Abbeel</div>
-          </div>
-          <div class="card">
-            <a href="https://youtu.be/j0z4FweCy4M?t=2900">
-              <div class="ccimg"><img src="assets/aiday.jpg" /></div>
-            </a>
-            <div class="cdesc">Tesla AI Day 2021</div>
-          </div>
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=g6bOwQdCJrc">
-              <div class="ccimg"><img src="assets/cvpr2021.png" /></div>
-            </a>
-            <div class="cdesc">AI for Full Self-Driving @ CVPR 2021</div>
-          </div>
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=hx7BXih7zx8">
-              <div class="ccimg"><img src="assets/scaledml2020.png" /></div>
-            </a>
-            <div class="cdesc">AI for Full Self-Driving @ ScaledML 2020</div>
-          </div>
-          <div class="card">
-            <a
-              href="https://www.youtube.com/watch?v=Ucp0TTmvqOE&feature=youtu.be&t=6678"
-            >
-              <div class="ccimg">
-                <img src="assets/auto_2.38.42_narrow.png" />
-              </div>
-            </a>
-            <div class="cdesc">Tesla Autonomy Day 2019</div>
-          </div>
-          <div class="card">
-            <a
-              href="https://slideslive.com/38917690/multitask-learning-in-the-wilderness"
-            >
-              <div class="ccimg"><img src="assets/multitask.png" /></div>
-            </a>
-            <div class="cdesc">
-              Multi-Task Learning in the Wilderness @ ICML 2019
-            </div>
-          </div>
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=oBklltKXtDE">
-              <div class="ccimg">
-                <img src="assets/pytorch_devcon_2019.jpg" />
-              </div>
-            </a>
-            <div class="cdesc">PyTorch at Tesla @ PyTorch DevCon 2019</div>
-          </div>
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=y57wwucbXR8">
-              <div class="ccimg"><img src="assets/software20.png" /></div>
-            </a>
-            <div class="cdesc">
-              Building the Software 2.0 stack @ Spark-AI 2018
-            </div>
-          </div>
 
-          <div class="card">
-            <a
-              href="http://videos.re-work.co/videos/344-interview-with-andrej-karpathy-openai"
-            >
-              <div class="ccimg"><img src="assets/rework.png" /></div>
-            </a>
-            <div class="cdesc">2017 RE•WORK Summit with Nathan Benaich</div>
-          </div>
+ 
 
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=xxu4IqwKw0w">
-              <div class="ccimg"><img src="assets/deeplearningai.png" /></div>
-            </a>
-            <div class="cdesc">
-              2017 "Heroes of Deep Learning" with Andrew Ng
-            </div>
-          </div>
+<A NAME="News"><h2>News</h2></A>
+<ul>
+<li> <b> <font color="#FF0000">[2021.06]</font> </b> Awarded with <b>"Outstanding Undergraduate of SYSU"</b> (<a href="http://spa.sysu.edu.cn/cn/content/2277" target="_blank"><font style="font-family:Microsoft YaHei">中山大学优秀毕业生</font></a>)!</li>
+<li> <b> <font color="#FF0000">[2020.11]</font> </b> Awarded with <b>"China Aerospace Fund-Huanya scholarship" Outstanding Prize</b> (<a href="http://spa.sysu.edu.cn/cn/content/2277" target="_blank"><font style="font-family:Microsoft YaHei">“中国航天-环亚”奖学奖</font></a>)!</li>
+<li> <b> <font color="#FF0000">[2020.10]</font> </b> One <b>SCI-Q1</b> paper is accepted by <b>Chinese Journal of Aeronautics</b> (<a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641" target="_blank">Paper</a>, <a href="./Files/CJA2020-limh-Paper.pdf" target="_blank">Link</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.11]</font> </b> Our <b>Air2Land: A deep learning dataset for UAV autolanding</b> is released (<a href= "https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Dataset</a>, <a href="./Files/Air2Land.pdf" target="_blank">PDF</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.09]</font> </b> Our national invention patent <b>"A real time target detection method"</b> has been accepted  (<a href="./Files/Four-patents.pdf" target="_blank">Link</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.09]</font> </b> Our national invention patent <b>"A method based on DenseHR-Net"</b> has been accepted  (<a href="./Files/Four-patents.pdf" target="_blank">Link</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.09]</font> </b> Our national invention patent <b>"A mosaic method for super large aerial strip image"</b> has been accepted  (<a href="./Files/Four-patents.pdf" target="_blank">Link</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.09]</font> </b> Our national invention patent <b>"Multi feature point detection method"</b> has been accepted  (<a href="./Files/Four-patents.pdf" target="_blank">Link</a>)!</li>
+<li> <b> <font color="#FF0000">[2020.09]</font> </b> Awarded with <b>"First Prize of Academic Scholarship"</b> (<a href="http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank"><font style="font-family:Microsoft YaHei">中山大学研究生一等奖学奖</font></a>)!</li>
+<li> <b> <font color="#FF0000">[2020.03]</font> </b> <b>Project leader</b> of excellent graduate innovation and development of Sun Yat-sen University  (<a href="http://research.sysu.edu.cn/node/3050" target="_blank">Report</a>, <a href="./Files/xiangmu.png" target="_blank">Certificate</a>)!</li>
+<li> <b> <font color="#FF0000">[2019.08]</font> </b> The First Prize of 2019 <b>“JCAR Cup”</b>  robot industry application competition <b>(As team leader)</b> (<a href="http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">Report</a>, <a href="./Files/JCAR.pdf" target="_blank">Certificate</a>)!</li>
+</ul>
+<br />
 
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=tqrcjHuNdmQ">
-              <div class="ccimg"><img src="assets/drlbootcamp.png" /></div>
-            </a>
-            <div class="cdesc">
-              2017 Deep RL Bootcamp with Pieter Abbeel et al
-            </div>
-          </div>
 
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=u6aEYuemt0M">
-              <div class="ccimg"><img src="assets/convlecture.png" /></div>
-            </a>
-            <div class="cdesc">2016 Bay Area Deep Learning School: CNNs</div>
-          </div>
+ 
+<A NAME="Interest"><h2>Research Interest</h2></A>
+I work in the field of computer vision, multi-modal human-computer interaction and deep learning theory. Currently, I focus on the following research topics:
+<ul>
+<li>Target state recognition based on zero-shot and multi-modal learning</li>
+<li>Combined data-driven with deep learning detection strategy for UAV landing vision task</li>
+<li>Responsible for the construction of UAV sequence image dataset for approaching and landing.</li>
+<li>UAV online location estimation using cascaded lightweight deep learning model</li>
+<li>Research on the rapidity and accuracy of image mosaic algorithm</li>
+<li>Mainly engaged in image perception and deep learning research</li>
+</ul>
+<br />
 
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=CYwK8bQprBY">
-              <div class="ccimg"><img src="assets/cvpr2016_talk.jpg" /></div>
-            </a>
-            <div class="cdesc">Deep Learning Workshop @ CVPR 2016</div>
-          </div>
 
-          <div class="card">
-            <a href="https://www.youtube.com/watch?v=qPcCk1V1JO8">
-              <div class="ccimg"><img src="assets/rework_talk.jpg" /></div>
-            </a>
-            <div class="cdesc">RE•WORK Deep Learning Summit 2016</div>
-          </div>
 
-          <div class="card">
-            <a
-              href="https://www.youtube.com/watch?v=8AnV7xAvpLQ&feature=youtu.be&t=4m15s"
-            >
-              <div class="ccimg"><img src="assets/nvidia_gtc_2015.jpg" /></div>
-            </a>
-            <div class="cdesc">NVIDIA GTC Keynote 2015 with Jensen Huang</div>
-          </div>
+
+<A NAME="Education"><h2>Education</h2></A>
+<ul class="education-list">
+    <li class="education-item">
+        <img src="./Files/hit.png" alt="Harbin Institute of Technology Logo">
+        <div class="content">
+            <span>2021.9-Now &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ph.D. in <a href="https://vilab.hit.edu.cn/index.html" target="_blank">MICRO Lab</a>, <a href="http://www.hit.edu.cn" target="_blank">Harbin Institute of Technology</a>.</span>
+            <span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Supervisor: Prof. <a href="https://vilab.hit.edu.cn/index.html" target="_blank">Hongxun Yao</a></span>
         </div>
-      </div>
-    </div> -->
-
-    <!-- <div
-      style="
-        background-color: #eee;
-        padding-top: 1px;
-        margin-top: 50px;
-        padding-bottom: 30px;
-      "
-    >
-      <div class="container">
-        <div class="ctitle">featured writing</div>
-        <ul class="nodot">
-          <li>
-            Mar 2021
-            <a href="https://karpathy.github.io/2021/06/21/blockchain/"
-              >A from-scratch tour of Bitcoin in Python</a
-            >
-          </li>
-          <li>
-            Mar 2021
-            <a href="https://karpathy.github.io/2021/03/27/forward-pass/"
-              >Short Story on AI: Forward Pass</a
-            >
-          </li>
-          <li>
-            Jun 2020
-            <a href="https://karpathy.github.io/2020/06/11/biohacking-lite/"
-              >Biohacking Lite</a
-            >
-          </li>
-          <li>
-            Apr 2019
-            <a href="https://karpathy.github.io/2019/04/25/recipe/"
-              >A Recipe for Training Neural Networks</a
-            >
-          </li>
-          <li>
-            Nov 2017
-            <a href="https://karpathy.medium.com/software-2-0-a64152b37c35"
-              >Software 2.0</a
-            >
-          </li>
-          <li>
-            Sep 2016
-            <a href="https://karpathy.github.io/2016/09/07/phd/"
-              >A Survival Guide to a PhD</a
-            >
-          </li>
-          <li>
-            Nov 2015
-            <a href="https://karpathy.github.io/2015/11/14/ai/"
-              >Short Story on AI: A Cognitive Discontinuity</a
-            >
-          </li>
-          <li>
-            May 2015
-            <a href="https://karpathy.github.io/2015/05/21/rnn-effectiveness/"
-              >The Unreasonable Effectiveness of Recurrent Neural Networks</a
-            >
-          </li>
-          <li>
-            Sep 2014
-            <a
-              href="https://karpathy.github.io/2014/09/02/what-i-learned-from-competing-against-a-convnet-on-imagenet/"
-              >What I learned from competing against a ConvNet on ImageNet</a
-            >
-          </li>
-          <li>
-            Oct 2012
-            <a
-              href="https://karpathy.github.io/2012/10/22/state-of-computer-vision/"
-              >The state of Computer Vision and AI: we are really, really far
-              away</a
-            >
-          </li>
-        </ul>
-      </div>
-    </div> -->
-
-    <div id="pet-projects" class="container">
-      <div class="ctitle">Publications</div>
-      <div class="hassets" style="height: 191px; margin: 20px 0 10px 0">
-        <div class="hasset" style="top: 0; left: 0; width: 50%">
-          <div style="position: relative">
-            <iframe
-              src="https://github-readme-stats.vercel.app/api?username=lmhlll&count_private=true&show_icons=true&card_width=1000"
-              width="100%"
-              height="191px"
-            ></iframe>
-            <a
-              href="https://github.com/lmhlll"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: inline-block;
-                width: 100%;
-                height: 191px;
-                z-index: 5;
-              "
-            ></a>
-          </div>
+    </li>
+    <li class="education-item">
+        <img src="./Files/sysu.png" alt="Sun Yat-sen University Logo">
+        <div class="content">
+            <span>2018.9-2021.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; M.E. in <a href="http://saa.sysu.edu.cn/" target="_blank">MICRO Lab</a>, <a href="http://www.sysu.edu.cn/cn/index.htm" target="_blank">Sun Yat-sen University</a>.</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Supervisor: Prof. <a href="http://saa.sysu.edu.cn/teacher/186" target="_blank">Tianjiang Hu</a></span>
         </div>
-      </div>
-
-      <div class="project">
-        <div class="pico">
-          <img
-            src="assets_files/2.png"
-          />
+    </li>
+    <li class="education-item">
+        <img src="./Files/cauc.png" alt="Civil Aviation University of China Logo">
+        <div class="content">
+            <span>2014.9-2018.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B.E. in <a href="https://www.cauc.edu.cn/zhv3/" target="_blank">School of Automation</a>, <a href="https://www.cauc.edu.cn/zhv3/" target="_blank">Civil Aviation University of China</a>.</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Supervisor: Prof. <a href="https://www.cauc.edu.cn/ddxy/list_more_40.html" target="_blank">Jian Zhang</a></span>
         </div>
-        <div class="pdesc">
-          We motivate and present
-          <a href="https://arxiv.org/abs/1903.00621"
-            >feature selective anchor-free (FSAF) module</a
-          >, a simple and effective building block forsingle-shot object
-          detectors. It can be plugged into single-shot detectors with feature
-          pyramid structure. The FSAF module addresses two limitations brought
-          up by the conventional anchor-based detection: 1) heuristic-guided
-          feature selection; 2) overlap-based anchor sampling.
+    </li>
+    <li class="education-item">
+        <img src="./Files/sysu.png" alt="Xinjiang Middle School Logo">
+        <div class="content">
+            <span>2011.9-2014.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Student in <a href="https://baike.baidu.com/item/%E6%96%B0%E7%BB%9B%E4%B8%AD%E5%AD%A6/3034628?fr=aladdin" target="_blank">Class 1103</a>, <a href="https://baike.baidu.com/item/%E6%96%B0%E7%BB%9B%E4%B8%AD%E5%AD%A6/3034628?fr=aladdin" target="_blank">Xinjiang Middle School</a>.</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Supervisor: Mrs. <a href="https://baike.baidu.com/item/%E6%96%B0%E7%BB%9B%E4%B8%AD%E5%AD%A6/3034628?fr=aladdin" target="_blank">Lingzhen Guang</a></span>
         </div>
-        <div class="pend"></div>
-      </div>
+    </li>
+</ul>
 
-      <div class="project">
-        <div class="pico">
-          <img
-            src="assets_files/samples.png"
-          />
-        </div>
-        <div class="pdesc">
-          We introduce
-          <a href="https://yihui-he.github.io/KL-Loss/"
-            >a novel bounding box regression loss</a
-          >
-          for learning bounding box transformation and localization variance
-          together. The resulting localization variance is utilized in our new
-          non-maximum suppression method to improve localization accuracy for
-          object detection. On MS-COCO, we boost the AP of VGG-16 faster R-CNN
-          from 23.6% to 29.1% with a single model and nearly no additional
-          computational overhead. More importantly, our method improves the AP
-          of ResNet-50 FPN fast R-CNN from 36.8% to 37.8%, which achieves
-          state-of-the-art bounding box refinement result.
-        </div>
-        <div class="pend"></div>
-      </div>
+<br />
 
-      <div class="pend"></div>
-    </div>
+ 
 
-    < <div class="container">
-      <div class="ctitle">publications</div>
 
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641"
-            >Deep Learning Enabled Localization for UAV Autolanding</a
-          >
-        </div>
-        <div class="pub-venue">CJA 2020 (SCI Q1 Top, IF=2.217)</div>
-        <div class="pub-authors">
-          M. Li, T. Hu
-        </div>
-      </div>
+<A NAME="Publications"><h2>Publications</h2></A>
+<p><b>Journals</b>: </p>
+<font size="3"> 
+<ul>
+<p style="text-indent: -1.6rem;margin-left: 0rem;">
+<span>[3] <b>M. Li</b>, T. Hu 
+“Deep Learning Enabled Localization for UAV Autolanding,” 
+<i>Chinese Journal of Aeronautics (<b>CJA</b>)</i>, 
+(<b>SCI Q1 Top, IF=2.217</b>)
+[<a href= "./Files/CJA.pdf" target="_blank">PDF</a>] 
+[<a href= "./Files/luyonghan.pdf" target="_blank">Certificate</a>]
+[<a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641" target="_blank">Link</a>]
+</span>
+</p>
 
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://lmhlll.github.io/Projects/Air2Land-main/"
-            >Air2Land: A deep learning dataset for UAV autolanding</a
-          >
-        </div>
-        <div class="pub-venue">ICRA-2022:under review</div>
-        <div class="pub-authors">
-          X. Zheng, M. Li, T. Hu
-        </div>
-      </div>
+<p style="text-indent: -1.6rem;margin-left: 0rem;">
+<span>[2] X. Zheng, <b>M. Li</b>, T. Hu
+“Air2Land: A deep learning dataset for UAV autolanding,” 
+<i>IEEE Robotics and Automation Society (<b>ICRA-2021:under review</b>)</i>, 
+(<b>Robot Conference Top</b>)
+[<a href= "./Files/Air2Land.pdf" target="_blank">PDF</a>] 
+[<a href="https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Code</a>]
+[<a href= "https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Dataset</a>]
+</span>
+</p>
 
-      <div class="pub">
-        <div class="pub-title">
-          <a href="https://lmhlll.github.io/Files/Thanks.png"
-            >Cross-drone Binocular Coordination for Ground Moving Target Tracking in Occlusion-rich Scenarios</a
-          >
-        </div>
-        <div class="pub-venue">ICRA-2020(Robot Conference Top)</div>
-        <div class="pub-authors">Y. Chang, T. Hu</div>
-      </div>
+<p style="text-indent: -1.6rem;margin-left: 0rem;">
+<span>[1] Y. Chang, T. Hu,
+“Cross-drone Binocular Coordination for Ground Moving Target Tracking in Occlusion-rich Scenarios,” 
+<i>IEEE Robotics and Automation Society (<b>ICRA-2020</b>)</i>, 
+(<b>Robot Conference Top</b>)
+[<a href= "./Files/ICRA_changyuan.pdf" target="_blank">PDF</a>]
+[<a href= "./Files/ICRA_changyuan.pdf" target="_blank">Certificate</a>]
+[<a href="./Files/Thanks.png" target="_blank">Thanks</a>]
+</span>
+</p>
+</ul>
+</font>
+<br />
+<br />
+<br />
 
-      <div>
-        <br />
-        Also on
-        <a
-          href="https://scholar.google.com/citations?user=l8WuQJgAAAAJ&hl=en&oi=ao"
-          >Google Scholar</a
-        >
-      </div>
-    </div> 
+ 
+ 
+<p><b>Conferences</b>: </p>
+<font size="3"> 
+<ul>
+<p style="text-indent: -1.6rem;margin-left: 0rem;">
+<span>[2] X. Zheng, <b>M. Li</b>, T. Hu
+“Air2Land: A deep learning dataset for UAV autolanding,” 
+<i>IEEE Robotics and Automation Society (<b>ICRA-2021:under review</b>)</i>, 
+(<b>Robot Conference Top</b>)
+[<a href= "./Files/Air2Land.pdf" target="_blank">PDF</a>] 
+[<a href="https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Code</a>]
+[<a href= "https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Dataset</a>]
+</span>
+</p>
 
-    <div class="container">
-      <div class="ctitle">Awards</div>
-      <ul style="padding-left: 10px">
-        <li>2021, Outstanding Undergraduate, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀毕业生</font> [<a href= "./Files/sysuoutstanding.jpg" target="_blank">Certificate</a>] </li>
-        <li>2020, Project leader of excellent graduate innovation and development, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀研究生创新发展项目负责人 (全校105人)</font> [<a href= "./Files/xiangmu.png" target="_blank">Certificate</a>] </li>
-        <li>2020, Awarded with "China Aerospace Fund-Huanya scholarship, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">“中国航天-环亚“奖学金</font>[<a href= "http://spa.sysu.edu.cn/cn/content/2277" target="_blank">Certificate</a>]</li>
-        <li>2020, postgraduate (2/41), Sun Yat-sen University | <font style="font-family:Microsoft YaHei">硕士成绩排名2/41</font>[<a href= "./Files/shuoshi-report.pdf" target="_blank">Report</a>]</li>
-        <li>2019, The First Prize of 2019 “JCAR Cup” robot industry application competition (As team leader), Siemens Research Institute | <font style="font-family:Microsoft YaHei">”清华·西门子“机器人工业应用大赛一等奖</font>[<a href= "./Files/JCAR.pdf" target="_blank">Certificate</a>][<a href= "http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">Report</a>]</li>
-        <li>2019, The Third prize of the southern competition area of the 2019 "Yuanchuang Cup" innovation and creativity competition, JWKJW | <font style="font-family:Microsoft YaHei">”源创杯“南部赛区三等奖</font>[<a href= "./Files/yuanchuangbei.pdf" target="_blank">Certificate</a>]</li>
-        <li>2019, First Prize of Academic Scholarship<b>(x2)</b>, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">一等学业奖学金</font></li>
-        <li>2018, First Prize of Academic Scholarship<b>(x4)</b>, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">一等学业奖学金</font>[<a href= "./Files/yideng.pdf" target="_blank">Certificate</a>]</li>
-        <li>2018, Outstanding Undergraduate, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学优秀毕业生</font>[<a href= "./Files/outstanding.pdf" target="_blank">Certificate</a>]</li>
-        <li>2018, Undergraduate GPA: 4.03 (2/248), Civil Avaition University of China | <font style="font-family:Microsoft YaHei">本科成绩排名2/248</font>[<a href= "./Files/benke-chengji.pdf" target="_blank">Report</a>]</li>
-        <li>2017, Xiamen Airlines Scholarship, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">厦航奖学金</font>[<a href= "./Files/xiahang.pdf" target="_blank">Certificate</a>]</li>
-        <li>2016, The First Prize of physics competition/top 10 mathematics competition, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学物理竞赛一等奖</font>[<a href= "./Files/CAUC-wuli.pdf" target="_blank">Certificate</a>]</li>
-        <li>2016, The Second Prize of physics competition for college students, Tianjin | <font style="font-family:Microsoft YaHei">天津市物理竞赛“二等奖”</font>[<a href= "./Files/tianjin-wuli.pdf" target="_blank">Certificate</a>]</li>
-        <li>2016, Civil Aviation Director Scholarship, Civil Aviation Authority | <font style="font-family:Microsoft YaHei">民航局长奖学金及“蓝天学子”称号</font>[<a href= "./Files/lantianxuezi.pdf" target="_blank">Certificate</a>]</li>
-      </ul>
-    </div>
+<p style="text-indent: -1.6rem;margin-left: 0rem;">
+<span>[1] Y. Chang, T. Hu,
+“Cross-drone Binocular Coordination for Ground Moving Target Tracking in Occlusion-rich Scenarios,” 
+<i>IEEE Robotics and Automation Society (<b>ICRA-2020</b>)</i>, 
+(<b>Robot Conference Top</b>)
+[<a href= "./Files/ICRA_changyuan.pdf" target="_blank">PDF</a>]
+[<a href= "./Files/ICRA_changyuan.pdf" target="_blank">Certificate</a>]
+[<a href="./Files/Thanks.png" target="_blank">Thanks</a>]
+</span>
+</p>
+</ul>
+<br />
+ 
+ 
+ 
+ 
 
-    
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<A NAME="Projects"><h2>Projects</h2></A>
+<font size="3"> 
+<ul>
+<li><a href= "https://lmhlll.github.io/Projects/mhli_English/" target="_blank">English learning homepage</a></li>
+<li><a href= "https://lmhlll.github.io/Projects/UAV-autolanding/" target="_blank">Research on taking off and landing guidance of UAV Based on ground binocular vision</a></li>
+<li><a href= "https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Construction of UAV sequence image dataset</a></li>
+</ul>
+</font>
+<br />
 
-    <!-- attempt hiding from spambots :p -->
-    <!-- <script type="text/javascript">
-      var e_is_shown = false;
-      document.getElementById("iemail").addEventListener("click", function () {
-        let demail = document.getElementById("demail");
-        demail.innerHTML = "yihuihe.yh" + " _at_ " + "gmail" + ".com";
-        demail.style.opacity = e_is_shown ? 0 : 1;
-        e_is_shown = !e_is_shown;
-      });
-    </script> -->
-  </body>
+
+
+
+ 
+<A NAME="Services"><h2>Services</h2></A>
+
+<p><b>Membership</b>: </p>
+<font size="3"> 
+<ul>
+<li>Chinese Society of Mechanics Member, 2018-Now</li>
+<li>Chinese Communist Party Member, 2017-Now</li>
+</ul>
+</font>
+<br />
+<br />
+<br />
+ 
+ 
+<p><b>Extracurricular Activities</b>: </p>
+<font size="3"> 
+<ul>
+<li>Assistant teacher of MATLAB language, School of Aeronautics and Astronautics, Sun Yat-sen University.</li>
+<li>Third prize of May 4th Chorus Festival of "The Voice of Xinghai", Sun Yat-sen University</li>
+<li>Organized the activity of planting trees in campus</li>
+<li>Third prize of poetry recitation competition, Sun Yat sen University</li>
+</ul>
+</font>
+<br />
+
+
+
+<A NAME="Awards"><h2>Awards</h2></A>
+<font size="3"> 
+<ul>
+<li>2021, Outstanding Undergraduate, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀毕业生</font> [<a href= "./Files/sysuoutstanding.jpg" target="_blank">Certificate</a>] </li>
+<li>2020, Project leader of excellent graduate innovation and development, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀研究生创新发展项目负责人 (全校105人)</font> [<a href= "./Files/xiangmu.png" target="_blank">Certificate</a>] </li>
+<li>2020, Awarded with "China Aerospace Fund-Huanya scholarship, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">“中国航天-环亚“奖学金</font>[<a href= "http://spa.sysu.edu.cn/cn/content/2277" target="_blank">Certificate</a>]</li>
+<li>2020, postgraduate (2/41), Sun Yat-sen University | <font style="font-family:Microsoft YaHei">硕士成绩排名2/41</font>[<a href= "./Files/shuoshi-report.pdf" target="_blank">Report</a>]</li>
+<li>2019, The First Prize of 2019 “JCAR Cup” robot industry application competition (As team leader), Siemens Research Institute | <font style="font-family:Microsoft YaHei">”清华·西门子“机器人工业应用大赛一等奖</font>[<a href= "./Files/JCAR.pdf" target="_blank">Certificate</a>][<a href= "http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">Report</a>]</li>
+<li>2019, The Third prize of the southern competition area of the 2019 "Yuanchuang Cup" innovation and creativity competition, JWKJW | <font style="font-family:Microsoft YaHei">”源创杯“南部赛区三等奖</font>[<a href= "./Files/yuanchuangbei.pdf" target="_blank">Certificate</a>]</li>
+<li>2019, First Prize of Academic Scholarship<b>(x2)</b>, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">一等学业奖学金</font></li>
+<li>2018, First Prize of Academic Scholarship<b>(x4)</b>, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">一等学业奖学金</font>[<a href= "./Files/yideng.pdf" target="_blank">Certificate</a>]</li>
+<li>2018, Outstanding Undergraduate, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学优秀毕业生</font>[<a href= "./Files/outstanding.pdf" target="_blank">Certificate</a>]</li>
+<li>2018, Undergraduate GPA: 4.03 (2/248), Civil Avaition University of China | <font style="font-family:Microsoft YaHei">本科成绩排名2/248</font>[<a href= "./Files/benke-chengji.pdf" target="_blank">Report</a>]</li>
+<li>2017, Xiamen Airlines Scholarship, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">厦航奖学金</font>[<a href= "./Files/xiahang.pdf" target="_blank">Certificate</a>]</li>
+<li>2016, The First Prize of physics competition/top 10 mathematics competition, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学物理竞赛一等奖</font>[<a href= "./Files/CAUC-wuli.pdf" target="_blank">Certificate</a>]</li>
+<li>2016, The Second Prize of physics competition for college students, Tianjin | <font style="font-family:Microsoft YaHei">天津市物理竞赛“二等奖”</font>[<a href= "./Files/tianjin-wuli.pdf" target="_blank">Certificate</a>]</li>
+<li>2016, Civil Aviation Director Scholarship, Civil Aviation Authority | <font style="font-family:Microsoft YaHei">民航局长奖学金及“蓝天学子”称号</font>[<a href= "./Files/lantianxuezi.pdf" target="_blank">Certificate</a>]</li>
+</ul>
+</font>
+ 
+<br />
+<br />
+
+
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5x3ebj080sx&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+ 
+
+<div id="article"></div>
+<div id="back_top">
+<div class="arrow"></div>
+<div class="stick"></div>
+</div>
+
+<script>
+$(function(){
+    $(window).scroll(function(){  //If scroll
+        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //Getting Height after scroll
+        if( scrollt >400 )
+        {  
+            $("#back_top").fadeIn(400); 
+        }
+        else
+        {
+            $("#back_top").stop().fadeOut(400);
+        }
+    });
+
+    $("#back_top").click(function(){ 
+
+        $("html,body").animate({scrollTop:"0px"}, 200);
+
+    }); 
+
+});
+</script>
+
+
+<!--
+All Rights Reserved by Minghui Li. Part of page is generated by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
+-->
+
+<!--
+<font size="2"; color="#A0A0A0";>
+<p style="text-align:center">Updating time: 2020.12.14</p>
+</font>
+-->
+
+</body>
 </html>
