@@ -1,0 +1,850 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <!-- 基本元数据声明：定义文档类型和字符编码 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- 页面标题 -->
+    <title>Minghui Li</title>
+    <!-- 视口设置，适配移动设备 -->
+    <meta name="viewport" content="width=device-width">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- 作者信息 -->
+    <meta name="author" content="Minghui Li">
+    <!-- 网站图标 -->
+    <link rel="shortcut icon" href="favicon.jpg">
+    <!-- 外部样式表链接 -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    
+    <!-- 苹果AI风格特效样式 -->
+    <style>
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(0, 123, 255, 0.3); }
+        50% { box-shadow: 0 0 40px rgba(0, 123, 255, 0.6), 0 0 60px rgba(0, 123, 255, 0.3); }
+      }
+      
+      
+      /* 静态白色背景 */
+      body {
+        background: #ffffff;
+        position: relative;
+        overflow-x: hidden;
+      }
+      
+
+
+
+      
+      /* 角落光效 */
+      .corner-glow {
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        pointer-events: none;
+        z-index: 1001;
+        background: radial-gradient(circle, rgba(0, 123, 255, 0.3) 0%, transparent 70%);
+        animation: cornerPulse 3s ease-in-out infinite;
+      }
+      
+      .corner-glow.top-left {
+        top: -50px;
+        left: -50px;
+        animation-delay: 0s;
+      }
+      
+      .corner-glow.top-right {
+        top: -50px;
+        right: -50px;
+        animation-delay: 0.75s;
+      }
+      
+      .corner-glow.bottom-left {
+        bottom: -50px;
+        left: -50px;
+        animation-delay: 1.5s;
+      }
+      
+      .corner-glow.bottom-right {
+        bottom: -50px;
+        right: -50px;
+        animation-delay: 2.25s;
+      }
+      
+      @keyframes cornerPulse {
+        0%, 100% { 
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% { 
+          opacity: 0.8;
+          transform: scale(1.2);
+        }
+      }
+      
+      
+      
+      /* 粒子背景 */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      /* Apple Intelligence 风格跑马灯容器 */
+      .apple-glow-wrapper {
+        position: relative;
+        width: fit-content;
+        margin: 20px auto;
+        border-radius: 20px;
+        z-index: 10;
+        isolation: isolate;
+      }
+
+      /* 旋转渐变边框 - 与光带同色系 */
+      .apple-glow-wrapper::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 22px;
+        background: conic-gradient(
+          from var(--glow-angle, 0deg),
+          #f59e0b, #ef4444, #ec4899, #c084fc,
+          #818cf8, #60a5fa, #22d3ee, #34d399,
+          #f59e0b
+        );
+        animation: appleRotate 4s linear infinite;
+        z-index: -1;
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        padding: 2px;
+      }
+
+      /* 外层柔和发光层 */
+      .apple-glow-wrapper::after {
+        content: '';
+        position: absolute;
+        inset: -16px;
+        border-radius: 34px;
+        background: conic-gradient(
+          from var(--glow-angle, 0deg),
+          #f59e0b, #ef4444, #ec4899, #c084fc,
+          #818cf8, #60a5fa, #22d3ee, #34d399,
+          #f59e0b
+        );
+        filter: blur(28px);
+        opacity: 0.55;
+        z-index: -2;
+        -webkit-mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        mask:
+          linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        padding: 22px;
+        animation: appleRotate 4s linear infinite, appleBreath 4s ease-in-out infinite;
+      }
+
+      @property --glow-angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+      }
+
+      @keyframes appleRotate {
+        0% { --glow-angle: 0deg; }
+        100% { --glow-angle: 360deg; }
+      }
+
+      @keyframes appleBreath {
+        0%, 100% { opacity: 0.45; filter: blur(24px); }
+        50% { opacity: 0.65; filter: blur(34px); }
+      }
+
+      /* 主容器 */
+      table[width="800px"] {
+        position: relative;
+        z-index: 1;
+        width: 800px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        overflow: hidden;
+        border: none;
+        margin: 0;
+      }
+      
+      /* 标题样式 */
+      h2 {
+        margin: 0;
+        transition: all 0.3s ease;
+      }
+      
+      h2:hover {
+        text-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+        transform: translateY(-2px);
+      }
+      
+      /* 头像浮动效果 */
+      img[alt="Profile Photo"] {
+        animation: float 3s ease-in-out infinite;
+        transition: all 0.3s ease;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+      }
+      
+      img[alt="Profile Photo"]:hover {
+        animation: glow 2s ease-in-out infinite;
+        transform: scale(1.05);
+      }
+      
+      /* 链接发光效果 */
+      a {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      a:hover {
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+        transform: translateY(-2px);
+      }
+      
+      /* 论文卡片效果 */
+      .paper {
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        margin: 10px 0;
+      }
+      
+      .paper:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* 标签发光效果 */
+      .tag {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .tag:hover {
+        animation: glow 1.5s ease-in-out infinite;
+        transform: scale(1.1);
+      }
+      
+      /* 社交媒体图标效果 */
+      img[alt="Github"], img[alt="Twitter"], img[alt="Google Scholar"] {
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(0, 123, 255, 0.3));
+      }
+      
+      img[alt="Github"]:hover, img[alt="Twitter"]:hover, img[alt="Google Scholar"]:hover {
+        transform: scale(1.2) rotate(5deg);
+        filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.8));
+      }
+      
+      /* 专利卡片效果 */
+      td[style*="border:1px solid #eee"] {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      td[style*="border:1px solid #eee"]:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 248, 255, 0.9));
+      }
+      
+      /* 滚动视差效果 */
+      .parallax-element {
+        position: relative;
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      
+      /* 响应式优化 */
+      @media (max-width: 860px) {
+        .particle {
+          display: none;
+        }
+      }
+    </style>
+  </head>	
+
+<body>   
+  
+  <!-- 角落光效 -->
+  <div class="corner-glow top-left"></div>
+  <div class="corner-glow top-right"></div>
+  <div class="corner-glow bottom-left"></div>
+  <div class="corner-glow bottom-right"></div>
+  
+  
+  <!-- 粒子背景 -->
+  <div class="particles" id="particles"></div>
+  
+  <!-- 主容器表格：固定宽度800px，居中对齐 -->
+  <div class="apple-glow-wrapper">
+  <table width="800px" border="0" align="center" cellspacing="0" cellpadding="0">
+    <tbody>
+      <!-- ========== 个人信息部分开始 ========== -->
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <!-- 个人信息内部表格：固定布局 -->
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="12" style="table-layout:fixed;">
+            <tbody>
+              <!-- 定义两列宽度比例 -->
+              <colgroup>
+                <col span="1" style="width: 28%;"> <!-- 左侧列：照片 -->
+                <col span="1" style="width: 65%;"> <!-- 右侧列：详细信息 -->
+              </colgroup>
+              <tr>
+                <!-- 个人头像 -->
+<td align="left" valign="top" style="padding: 20px;" class="parallax-element" data-speed="0.3">
+  <img border="0" style="border-radius: 8px; width: 180px; height: auto; object-fit: cover; border: 2px solid #f0f0f0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" src="assets/img/lmh_photo_square.jpg" alt="Profile Photo">
+</td>
+                <!-- 个人详细信息 -->
+                <td valign="top" align="left">
+                  <p align="left"><h2><b>Minghui Li &nbsp;&nbsp;李铭慧</b></h2></p>
+                  <p align="left">
+                    <font size=+1><i>Ph.D. in Computer Science（计算机博士）</i></font><br><br>
+                    <a href="https://www.baidu.com/" target="_blank">Baidu Inc. | 百度公司（员工）</a><br>
+                    <a href="https://vilab.hit.edu.cn/index.html" target="_blank">HIT-VILab | 哈尔滨工业大学-视觉智能实验室（博士）</a><br><br>
+                  </p>
+                  <p align="left">Email: 894194906@qq.com</p>
+                  <!-- 社交媒体图标链接 -->
+                  <p align="left">
+                    <a href="https://github.com/lmhlll" target="_blank">
+                      <img src="assets\img\github.png" alt="Github" width="75px"/>
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://scholar.google.com/citations?user=aTyb4s4AAAAJ&hl=zh-CN" target="_blank">
+                      <img src="assets\img\twitter_logo.png" alt="Twitter" width="70px"/>
+                    </a>&nbsp;&nbsp;&nbsp;
+                    <a href="https://scholar.google.com/citations?user=aTyb4s4AAAAJ&hl=zh-CN" target="_blank">
+                      <img src="assets\img\google.png" alt="Google Scholar" width="75px"/>
+                    </a>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <!-- ========== 个人简介部分 ========== -->
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                  <h2><b>Biography</b></h2><hr/>
+                  <p><font size="3">I received my Ph.D. from <a href="http://en.hit.edu.cn/" target="_blank"><font size="3">Harbin Institute of Technology（哈工大）</font></a>, supervised by Prof. 
+<a href="https://homepage.hit.edu.cn/yaohongxun" target="_blank"><font size="3">Hongxun Yao</font></a>. Before that, I got my Master's degree from 
+                    <a href="https://www.sysu.edu.cn/" target="_blank"><font size="3">Sun Yat-sen University（中山大学）</font></a>. 
+                    My research interests include image processing and computer vision, mainly focusing on few-shot learning.</font></p>  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ========== 新闻动态部分 ========== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr>
+                <td style="padding:15px;width:60%;vertical-align:middle">
+                  <h2><b>News</b></h2><hr/>
+                  <ul>
+					<!--
+<li><p>[09/2025] One <b>SCI</b> paper is accepted by <b>Knowledge-Based Systems</b> 🎉🎉 (IF:8.8, <a href="https://doi.org/10.1016/j.knosys.2025.114475" target="_blank">Paper</a>, <a href="./Files/work5-跨域小样本.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[03/2025] One <b>SCI</b> paper is accepted by <b>Neurocomputing</b> 🎉🎉 (IF:6.5, <a href="https://doi.org/10.1016/j.neucom.2025.129688" target="_blank">Paper</a>, <a href="./Files/neuro-提示学习.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[02/2025] One <b>SCI</b> paper is accepted by <b>Neurocomputing</b> 🎉🎉 (IF:6.5, <a href="https://doi.org/10.1016/j.neucom.2025.130056" target="_blank">Paper</a>, <a href="./Files/neuro-跨域小样本.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[12/2024] Awarded with <b>"Annual Outstanding Student of HIT"</b> (<a href="./Files/studenthit.jpg" target="_blank">哈工大年度优秀学生</a>)!</p></li>
+<li><p>[05/2024] Our national invention patent <b>"A mosaic method for large aerial strip image"</b> has been accepted (<a href="./Files/2020109322260一种超大航拍条带图像的拼接生成方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[03/2024] One <b>SCI</b> paper is accepted by <b>Neural Computing and Applications</b> (IF:6.0, <a href="https://link.springer.com/article/10.1007/s00521-024-09501-8?fromPaywallRec=true" target="_blank">Paper</a>, <a href="./Files/work2-springer.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[08/2023] One <b>SCI</b> paper is accepted by <b>Neural Computing and Applications</b> (IF:6.0, <a href="https://link.springer.com/article/10.1007/s00521-023-08787-4" target="_blank">Paper</a>, <a href="./Files/paper1.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[07/2023] Our national invention patent <b>"Multi feature point detection method"</b> has been accepted (<a href="./Files/2020109258387基于双级联深度网络的无人机多特征点检测方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[07/2023] Our national invention patent <b>"A method based on DenseHR-Net"</b> has been accepted (<a href="./Files/2020109257929一种基于DenseHR-Net的无人机自主着陆目标提取方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[03/2022] Our national invention patent <b>"A real time target detection method"</b> has been accepted (<a href="./Files/2020109257933一种面向无人机机载平台部署的实时目标检测方法及装置发明专利证书(签章).pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[06/2021] Awarded with <b>"Outstanding Undergraduate of SYSU"</b> (<a href="http://spa.sysu.edu.cn/cn/content/2277" target="_blank">中山大学优秀毕业生</a>)!</p></li>
+<li><p>[03/2021] One <b>SCI-Q1</b> paper is accepted by <b>Chinese Journal of Aeronautics</b> (IF:5.7, <a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641" target="_blank">Paper</a>, <a href="./Files/CJA2020-limh-Paper.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[11/2020] Awarded with <b>"China Aerospace Fund-Huanya" Outstanding Prize</b> (<a href="http://spa.sysu.edu.cn/cn/content/2277" target="_blank">"中国航天-环亚"奖学奖-10,000元</a>)!</p></li>
+<li><p>[11/2020] Our <b>Air2Land: A deep learning dataset for UAV autolanding</b> is released (<a href="https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Dataset</a>, <a href="./Files/Air2Land.pdf" target="_blank">PDF</a>)!</p></li>
+<li><p>[09/2020] Awarded with <b>"First Prize of Academic Scholarship"</b> (<a href="http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">中山大学研究生一等奖学奖，所有学年均获得</a>)!</p></li>
+<li><p>[03/2020] <b>Project leader</b> of excellent graduate innovation and development of Sun Yat-sen University (<a href="http://research.sysu.edu.cn/node/3050" target="_blank">Report</a>, <a href="./Files/xiangmu.png" target="_blank">Certificate</a>)!</p></li>
+<li><p>[08/2019] The First Prize of 2019 <b>"JCAR Cup"</b> robot industry application competition <b>(As team leader)</b> (<a href="http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">Report</a>, <a href="./Files/JCAR.pdf" target="_blank">Certificate</a>)!</p></li>-->
+                    <!-- <a href="https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_Dynamic_Policy-Driven_Adaptive_Multi-Instance_Learning_for_Whole_Slide_Image_Classification_CVPR_2024_paper.html" target="_blank">[Paper]</a></p></li> -->
+<li><p>[09/2025] One <b>SCI</b> paper is accepted by <b>Knowledge-Based Systems</b> 🎉🎉 (IF:8.8, <a href="https://doi.org/10.1016/j.knosys.2025.114475" target="_blank">Paper</a>, <a href="./Files/work5-跨域小样本.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[03/2025] One <b>SCI</b> paper is accepted by <b>Neurocomputing</b> 🎉🎉 (IF:6.5, <a href="https://doi.org/10.1016/j.neucom.2025.129688" target="_blank">Paper</a>, <a href="./Files/neuro-提示学习.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[02/2025] One <b>SCI</b> paper is accepted by <b>Neurocomputing</b> 🎉🎉 (IF:6.5, <a href="https://doi.org/10.1016/j.neucom.2025.130056" target="_blank">Paper</a>, <a href="./Files/neuro-跨域小样本.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[12/2024] Awarded with <b>"Annual Outstanding Student of HIT"</b> (<a href="./Files/studenthit.jpg" target="_blank">哈工大年度优秀学生</a>)!</p></li>
+<li><p>[05/2024] Our national invention patent has been accepted (<a href="./Files/2020109322260一种超大航拍条带图像的拼接生成方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[03/2024] One <b>SCI</b> paper is accepted by <b>Neural Computing and Applications</b> (IF:6.0, <a href="https://link.springer.com/article/10.1007/s00521-024-09501-8?fromPaywallRec=true" target="_blank">Paper</a>, <a href="./Files/work2-springer.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[08/2023] One <b>SCI</b> paper is accepted by <b>Neural Computing and Applications</b> (IF:6.0, <a href="https://link.springer.com/article/10.1007/s00521-023-08787-4" target="_blank">Paper</a>, <a href="./Files/paper1.pdf" target="_blank">Link</a>)!</p></li>
+<li><p>[07/2023] Our national invention patent has been accepted (<a href="./Files/2020109258387基于双级联深度网络的无人机多特征点检测方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[07/2023] Our national invention patent has been accepted (<a href="./Files/2020109257929一种基于DenseHR-Net的无人机自主着陆目标提取方法及装置发明专利证书.pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[03/2022] Our national invention patent has been accepted (<a href="./Files/2020109257933一种面向无人机机载平台部署的实时目标检测方法及装置发明专利证书(签章).pdf" target="_blank">Link</a>, 专利授权)!</p></li>
+<li><p>[06/2021] Awarded with <b>"Outstanding Undergraduate of SYSU"</b> (<a href="http://spa.sysu.edu.cn/cn/content/2277" target="_blank">中山大学优秀毕业生</a>)!</p></li>
+<li><p>[03/2021] One <b>SCI-Q1</b> paper is accepted by <b>Chinese Journal of Aeronautics</b> (IF:5.7, <a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641" target="_blank">Paper</a>, <a href="./Files/CJA2020-limh-Paper.pdf" target="_blank">Link</a>)!</p></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>	
+
+          <!-- ========== 精选出版物标题 ========== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr>
+                <td style="padding:15px;width:100%;vertical-align:middle">
+                  <h2><b>Selected Publications</b></h2><hr/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <!-- ========== 出版物列表 ========== -->
+          <table style="width:750;table-layout:fixed;">
+            <tbody>
+              
+<!-- 出版物1 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work5.png' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Knowledge-Based Systems</span> &nbsp;
+    <a href="https://doi.org/10.1016/j.knosys.2025.114475">
+      <span class="papertitle">Bias-in-debias-out: Hierarchical channel-spatial bias calibration for cross-domain few-shot classification</span>
+    </a><br>
+    <b>Minghui Li</b>, Hongxun Yao<br>
+    <em>Knowledge-Based Systems</em>, 2025<br>
+    <a href="https://doi.org/10.1016/j.knosys.2025.114475">[Paper]</a>  
+    <a href="./Files/work5-跨域小样本.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q1-Top IF: 8.8</font>
+  </td>
+</tr>
+
+<!-- 出版物2 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work3.png' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Neurocomputing</span> &nbsp;
+    <a href="https://doi.org/10.1016/j.neucom.2025.129688">
+      <span class="papertitle">FMVP: Fine-grained Meta Visual Prompt enabled domain-specific few-shot classification</span>
+    </a><br>
+    <b>Minghui Li</b>, Hongxun Yao<br>
+    <em>Neurocomputing</em>, 2025<br>
+    <a href="https://doi.org/10.1016/j.neucom.2025.129688">[Paper]</a>  
+    <a href="./Files/neuro-提示学习.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q1-Top IF: 6.5</font>
+  </td>
+</tr>
+
+<!-- 出版物3 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work4.png' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Neurocomputing</span> &nbsp;
+    <a href="https://doi.org/10.1016/j.neucom.2025.130056">
+      <span class="papertitle">Drop inherent biases: Multi-level attention calibration for robust cross-domain few-shot classification</span>
+    </a><br>
+    <b>Minghui Li</b>, Jing Jiang, Hongxun Yao<br>
+    <em>Neurocomputing</em>, 2025<br>
+    <a href="https://doi.org/10.1016/j.neucom.2025.130056">[Paper]</a>  
+    <a href="./Files/neuro-跨域小样本.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q1-Top IF: 6.5</font>
+  </td>
+</tr>
+
+<!-- 出版物4 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work2.png' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Neural Computing and Applications</span> &nbsp;
+    <a href="https://link.springer.com/article/10.1007/s00521-024-09501-8?fromPaywallRec=true">
+      <span class="papertitle">In-use calibration: improving domain-specific fine-grained few-shot recognition</span>
+    </a><br>
+    <b>Minghui Li</b>, Hongxun Yao<br>
+    <em>Neural Computing and Applications</em>, 2024<br>
+    <a href="https://link.springer.com/article/10.1007/s00521-024-09501-8?fromPaywallRec=true">[Paper]</a>  
+    <a href="./Files/work2-springer.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q2 IF: 6.0</font>
+  </td>
+</tr>
+
+<!-- 出版物5 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work1.png' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Neural Computing and Applications</span> &nbsp;
+    <a href="https://link.springer.com/article/10.1007/s00521-023-08787-4">
+      <span class="papertitle">Focus nuance and toward diversity: exploring domain-specific fine-grained few-shot recognition</span>
+    </a><br>
+    <b>Minghui Li</b>, Hongxun Yao, Yong Wang<br>
+    <em>Neural Computing and Applications</em>, 2023<br>
+    <a href="https://link.springer.com/article/10.1007/s00521-023-08787-4">[Paper]</a>  
+    <a href="./Files/paper1.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q2 IF: 6.0</font>
+  </td>
+</tr>
+
+<!-- 出版物6 -->
+<tr class="paper codec select">
+  <td style="padding:20px;width:30%;vertical-align:middle">
+    <div><img src='assets/paper/work0.jpg' width=100%></div>
+  </td>
+  <td style="padding:20px;width:70%;vertical-align:middle">
+    <span class="tag">Chinese Journal of Aeronautics</span> &nbsp;
+    <a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641">
+      <span class="papertitle">Deep learning enabled localization for UAV autolanding</span>
+    </a><br>
+    <b>Minghui Li</b>, Tianjiang Hu<br>
+    <em>Chinese Journal of Aeronautics</em>, 2021<br>
+    <a href="https://www.sciencedirect.com/science/article/pii/S1000936120305641">[Paper]</a>  
+    <a href="./Files/CJA2020-limh-Paper.pdf">[PDF]</a>
+    ⭐ <font color="#DA1212" size="2">SCI-Q1-Top IF: 5.7</font>
+  </td>
+</tr>
+
+                </td>
+              </tr>
+            </tbody>
+          </table> 
+
+          <!-- ========== 荣誉奖项部分 ========== -->
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr>
+                <td style="padding:15px;width:60%;vertical-align:middle">
+                  <h2><b>Projects</b></h2><hr/>
+                  <ul>
+<li><p></p><a href= "https://lmhlll.github.io/Projects/UAV-autolanding/" target="_blank">Research on taking off and landing guidance of UAV Based on ground binocular vision </a>| <font style="font-family:Microsoft YaHei">地基视觉定位</p></li>
+<li><p></p><a href= "https://lmhlll.github.io/Projects/Air2Land-main/" target="_blank">Construction of UAV sequence image dataset</a> | <font style="font-family:Microsoft YaHei">Air2Land数据集发布</font></p></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>		  
+
+<!-- ========== 精选出版物标题 ========== -->
+<!-- ========== 精选出版物标题 ========== -->
+<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <tbody>
+    <tr>
+      <td style="padding:15px;width:100%;vertical-align:middle">
+        <h2><b>Selected Patents</b></h2><hr/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ========== 专利表格 - 四列并排 ========== -->
+<table style="width:100%;border:0px;border-spacing:15px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <tbody>
+    <tr>
+      <!-- 专利1 -->
+      <td style="width:23%;min-width:200px;border:1px solid #eee;padding:12px;vertical-align:top;text-align:center;">
+        <div style="margin-bottom:8px;">
+          
+        </div>
+        <div style="font-size:0.9em;">
+          <span class="tag">国家发明专利</span><br>
+          <span style="font-weight:bold;font-size:0.95em;">一种超大航拍条带图像的拼接生成方法及装置</span><br>
+          <b>李铭慧</b>等<br>
+          <em>专利授权</em>, 2024.05<br>
+          <a href="./Files/2020109322260一种超大航拍条带图像的拼接生成方法及装置发明专利证书.pdf">[证书]</a>
+        </div>
+      </td>
+      
+      <!-- 专利2 -->
+      <td style="width:23%;min-width:200px;border:1px solid #eee;padding:12px;vertical-align:top;text-align:center;">
+        <div style="margin-bottom:8px;">
+          
+        </div>
+        <div style="font-size:0.9em;">
+          <span class="tag">国家发明专利</span><br>
+          <span style="font-weight:bold;font-size:0.95em;">基于双级联深度网络的无人机多特征点检测方法及装置</span><br>
+          <b>李铭慧</b>等<br>
+          <em>专利授权</em>, 2023.07<br>
+          <a href="./Files/2020109258387基于双级联深度网络的无人机多特征点检测方法及装置发明专利证书.pdf">[证书]</a>
+        </div>
+      </td>
+      
+      <!-- 专利3 -->
+      <td style="width:23%;min-width:200px;border:1px solid #eee;padding:12px;vertical-align:top;text-align:center;">
+        <div style="margin-bottom:8px;">
+          
+        </div>
+        <div style="font-size:0.9em;">
+          <span class="tag">国家发明专利</span><br>
+          <span style="font-weight:bold;font-size:0.95em;">一种基于DenseHR-Net的无人机自主着陆目标提取方法及装置</span><br>
+          <b>李铭慧</b>等<br>
+          <em>专利授权</em>, 2023.07<br>
+          <a href="./Files/2020109257929一种基于DenseHR-Net的无人机自主着陆目标提取方法及装置发明专利证书.pdf">[证书]</a>
+        </div>
+      </td>
+      
+      <!-- 专利4 -->
+      <td style="width:23%;min-width:200px;border:1px solid #eee;padding:12px;vertical-align:top;text-align:center;">
+        <div style="margin-bottom:8px;">
+          
+        </div>
+        <div style="font-size:0.9em;">
+          <span class="tag">国家发明专利</span><br>
+          <span style="font-weight:bold;font-size:0.95em;">一种面向无人机机载平台部署的实时目标检测方法及装置</span><br>
+          <b>李铭慧</b>等<br>
+          <em>专利授权</em>, 2022.03<br>
+          <a href="./Files/2020109257933一种面向无人机机载平台部署的实时目标检测方法及装置发明专利证书(签章).pdf">[证书]</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+          <!-- ========== 荣誉奖项部分 ========== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr>
+                <td style="padding:15px;width:60%;vertical-align:middle">
+                  <h2><b>Honors and Awards</b></h2><hr/>
+                  <ul>
+					<li><p>2024, Annual Outstanding Student, Harbin Institute of Technology | <font style="font-family:Microsoft YaHei">哈工大年度优秀学生</font> [<a href= "./Files/studenthit.jpg" target="_blank">Certificate</a>] </p></li>
+<li><p>2021, Outstanding Undergraduate, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀毕业生</font> [<a href= "./Files/sysuoutstanding.jpg" target="_blank">Certificate</a>] </p></li>
+<li><p>2020, Project leader of excellent graduate innovation and development, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">中山大学优秀研究生创新发展项目负责人 (全校105人)</font> [<a href= "./Files/xiangmu.png" target="_blank">Certificate</a>] </p></li>
+<li><p>2020, Awarded with "China Aerospace Fund-Huanya scholarship, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">“中国航天-环亚“奖学金</font>[<a href= "http://spa.sysu.edu.cn/cn/content/2277" target="_blank">Certificate</a>]</p></li>
+<li><p>2020, postgraduate (2/41), Sun Yat-sen University | <font style="font-family:Microsoft YaHei">硕士成绩排名2/41</font>[<a href= "./Files/shuoshi-report.pdf" target="_blank">Report</a>]</p></li>
+<li><p>2019, The First Prize of 2019 “JCAR Cup” robot industry application competition (As team leader), Siemens Research Institute | <font style="font-family:Microsoft YaHei">”清华·西门子“机器人工业应用大赛一等奖</font>[<a href= "./Files/JCAR.pdf" target="_blank">Certificate</a>][<a href= "http://news2.sysu.edu.cn/news01/1366076.htm" target="_blank">Report</a>]</p></li>
+<li><p>2019, The Third prize of the southern competition area of the 2019 "Yuanchuang Cup" innovation and creativity competition, JWKJW | <font style="font-family:Microsoft YaHei">”源创杯“南部赛区三等奖</font>[<a href= "./Files/yuanchuangbei.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2019, First Prize of Academic Scholarship<b>(x2)</b>, Sun Yat-sen University | <font style="font-family:Microsoft YaHei">硕士一等学业奖学金，每年均获得</font></p></li>
+<li><p>2018, First Prize of Academic Scholarship<b>(x4)</b>, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">本科一等学业奖学金，每年均获得</font>[<a href= "./Files/yideng.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2018, Outstanding Undergraduate, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学优秀毕业生</font>[<a href= "./Files/outstanding.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2018, Undergraduate GPA: 4.02 (1/248), Civil Avaition University of China | <font style="font-family:Microsoft YaHei">本科成绩排名1/248</font>[<a href= "./Files/benke-chengji.pdf" target="_blank">Report</a>]</p></li>
+<li><p>2017, Xiamen Airlines Scholarship, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">厦航奖学金</font>[<a href= "./Files/xiahang.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2016, The First Prize of physics competition/top 10 mathematics competition, Civil Avaition University of China | <font style="font-family:Microsoft YaHei">中国民航大学物理竞赛一等奖</font>[<a href= "./Files/CAUC-wuli.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2016, The Second Prize of physics competition for college students, Tianjin | <font style="font-family:Microsoft YaHei">天津市物理竞赛“二等奖”</font>[<a href= "./Files/tianjin-wuli.pdf" target="_blank">Certificate</a>]</p></li>
+<li><p>2016, Civil Aviation Director Scholarship, Civil Aviation Authority | <font style="font-family:Microsoft YaHei">民航局长奖学金及“蓝天学子”称号</font>[<a href= "./Files/lantianxuezi.pdf" target="_blank">Certificate</a>]</p></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- ========== 访问统计和版权信息 ========== -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;table-layout:fixed;">
+            <tbody>
+              <tr>
+                <td style="padding:15px;width:60%;vertical-align:middle">
+                  <h2><b>Visiting</b></h2><hr/><br>
+                  <!-- 访问统计地图脚本 -->
+                  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Rkmze6EHFUviW7KvDtMyQhnqH1kNbOYM1XP34ftTf1E&cl=ffffff&w=280&h=180"></script>
+                  <!-- 版权信息 -->
+                  <div id="copyright" align="center">
+                    <p>Copyright&copy; 2024  Minghui Li.</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  </div> <!-- end apple-glow-wrapper -->
+
+  <!-- 苹果AI风格特效JavaScript -->
+  <script>
+    // 粒子动画系统
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // 随机大小和位置
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        
+        // 随机动画延迟
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        
+        particlesContainer.appendChild(particle);
+      }
+    }
+    
+    
+    // 标题发光效果
+    function titleGlowEffect() {
+      const titles = document.querySelectorAll('h2');
+      titles.forEach((title, index) => {
+        // 添加延迟显示效果
+        title.style.opacity = '0';
+        title.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+          title.style.transition = 'all 0.6s ease';
+          title.style.opacity = '1';
+          title.style.transform = 'translateY(0)';
+        }, index * 200);
+      });
+    }
+    
+    // 滚动视差效果
+    function parallaxEffect() {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.parallax-element');
+        
+        parallaxElements.forEach(element => {
+          const speed = element.dataset.speed || 0.5;
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+    }
+    
+    // 鼠标跟随效果
+    function mouseFollowEffect() {
+      document.addEventListener('mousemove', (e) => {
+        const particles = document.querySelectorAll('.particle');
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        
+        particles.forEach((particle, index) => {
+          const rect = particle.getBoundingClientRect();
+          const particleX = rect.left + rect.width / 2;
+          const particleY = rect.top + rect.height / 2;
+          
+          const distance = Math.sqrt(
+            Math.pow(mouseX - particleX, 2) + Math.pow(mouseY - particleY, 2)
+          );
+          
+          if (distance < 100) {
+            const force = (100 - distance) / 100;
+            const angle = Math.atan2(particleY - mouseY, particleX - mouseX);
+            const moveX = Math.cos(angle) * force * 20;
+            const moveY = Math.sin(angle) * force * 20;
+            
+            particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+          } else {
+            particle.style.transform = 'translate(0, 0)';
+          }
+        });
+      });
+    }
+    
+    // 元素进入视口动画
+    function intersectionObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      // 为所有主要元素添加观察
+      const elements = document.querySelectorAll('tr, .paper, td[style*="border:1px solid #eee"]');
+      elements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease';
+        observer.observe(el);
+      });
+    }
+    
+    // 页面加载完成后初始化所有效果
+    document.addEventListener('DOMContentLoaded', () => {
+      createParticles();
+      titleGlowEffect();
+      parallaxEffect();
+      mouseFollowEffect();
+      intersectionObserver();
+
+      // Apple AI 跑马灯 JS 降级方案（兼容不支持 @property 的浏览器）
+      (function appleGlowFallback() {
+        const wrapper = document.querySelector('.apple-glow-wrapper');
+        if (!wrapper) return;
+        // 检测浏览器是否支持 @property
+        try { CSS.registerProperty({ name: '--test-prop', syntax: '<angle>', initialValue: '0deg', inherits: false }); return; } catch(e) {}
+        let angle = 0;
+        const colors = '#f59e0b, #ef4444, #ec4899, #c084fc, #818cf8, #60a5fa, #22d3ee, #34d399, #f59e0b';
+        const styleEl = document.createElement('style');
+        styleEl.id = 'glow-fallback-style';
+        document.head.appendChild(styleEl);
+        function updateGlow() {
+          angle = (angle + 1.2) % 360;
+          const grad = `conic-gradient(from ${angle}deg, ${colors})`;
+          styleEl.textContent = `
+            .apple-glow-wrapper::before { background: ${grad} !important; animation: none !important; }
+            .apple-glow-wrapper::after  { background: ${grad} !important; }
+          `;
+          requestAnimationFrame(updateGlow);
+        }
+        updateGlow();
+      })();
+      
+      // 添加页面加载动画
+      document.body.style.opacity = '0';
+      setTimeout(() => {
+        document.body.style.transition = 'opacity 1s ease';
+        document.body.style.opacity = '1';
+      }, 100);
+    });
+    
+    // 添加键盘交互效果
+    document.addEventListener('keydown', (e) => {
+      if (e.key === ' ') {
+        e.preventDefault();
+        // 空格键触发特殊效果
+        const particles = document.querySelectorAll('.particle');
+        particles.forEach(particle => {
+          particle.style.animation = 'none';
+          setTimeout(() => {
+            particle.style.animation = 'float 6s ease-in-out infinite';
+          }, 10);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
